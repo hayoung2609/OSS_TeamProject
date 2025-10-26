@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import RecipeCard from '../components/RecipeCard';
 import RandomRecipe from '../components/RandomRecipe';
-import { useForm } from 'react-hook-form'; // 1. useForm 임포트
+import { useForm } from 'react-hook-form';
 
 function HomePage() {
     const [recipes, setRecipes] = useState([]);
@@ -12,7 +12,6 @@ function HomePage() {
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     
-    // 2. useState 대신 useForm 사용
     const { register, watch } = useForm({
         defaultValues: {
             searchTerm: '',
@@ -20,7 +19,6 @@ function HomePage() {
         }
     });
 
-    // 3. watch로 폼 값 실시간 추적
     const searchTerm = watch('searchTerm');
     const sortOrder = watch('sortOrder');
 

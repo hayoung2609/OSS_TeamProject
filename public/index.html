@@ -20,24 +20,13 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
-    <!-- [번역 기능 1/3] 구글 번역 위젯이 로드될 위치 (CSS로 숨겨집니다) -->
-    <div id="google_translate_element"></div>
-
     <div id="root"></div>
     
     <!-- [번역 기능 2/3] 구글 번역 스크립트와 초기화 함수 -->
     <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: 'ko', // 웹사이트의 원본 언어
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE 
-          }, 
-          'google_translate_element'
-        );
-      }
+      
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
   </body>
 </html>
