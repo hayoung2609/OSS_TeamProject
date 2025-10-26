@@ -6,7 +6,7 @@ import DetailPage from '../pages/DetailPage';
 import AddRecipePage from '../pages/AddRecipePage';
 import EditRecipePage from '../pages/EditRecipePage';
 import LoginPage from '../pages/LoginPage';
-import SignUpPage from '../pages/SignUpPage'; // SignUpPage 임포트
+import SignUpPage from '../pages/SignUpPage';
 
 const AppRouter = () => {
   return (
@@ -16,7 +16,7 @@ const AppRouter = () => {
       <Route path="/add-recipe" element={<AddRecipePage />} />
       <Route path="/recipe/:id/edit" element={<EditRecipePage />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/signup" element={<SignUpPage />} /> {/* 회원가입 경로 추가 */}
+      <Route path="/signup" element={<SignUpPage />} /> 
     </Routes>
   );
 };
