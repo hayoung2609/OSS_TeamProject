@@ -1,0 +1,29 @@
+/* Tailwind CSS 기본 지시어 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 전역 스타일 설정 */
+@layer base {
+  body {
+    /* "우디" 테마 색상 적용 */
+    @apply bg-background text-text-primary;
+    scroll-behavior: smooth;
+  }
+}
+
+/* 
+  [번역 기능 3/3] 
+  구글 번역 위젯 및 툴바 숨기기 
+*/
+
+/* 드롭다운 메뉴 숨기기 */
+#google_translate_element {
+  display: none !important;
+}
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}
