@@ -1,22 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function Header() {
-  const changeLanguage = (langCode) => {
-    let attempts = 0;
-    const intervalId = setInterval(() => {
-      const googleTranslateSelect = document.querySelector('.goog-te-combo');
-      attempts++;
+  const { i18n } = useTranslation();
 
-      if (googleTranslateSelect) {
-        clearInterval(intervalId);
-        googleTranslateSelect.value = langCode;
-        googleTranslateSelect.dispatchEvent(new Event('change', { bubbles: true }));
-      } else if (attempts > 20) { // 최대 2초 동안 시도
-        clearInterval(intervalId);
-        console.error("2초 동안 구글 번역 위젯을 찾지 못했습니다.");
-      }
-    }, 100);
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang); // 언어 변경
   };
 
   return (
@@ -34,11 +24,11 @@ export default function Header() {
               회원가입
             </Link>
           </div>
-          <div className="flex items-center gap-2 border-l border-gray-300 pl-4 sm:pl-6">
-            <button onClick={() => changeLanguage('')} className="text-sm font-semibold text-gray-500 hover:text-yellow-600 transition-colors" title="Switch to Korean">
+          <div className="flex gap-2">
+            <button onClick={() => changeLanguage('ko')} className="text-sm font-semibold text-gray-500 hover:text-yellow-600">
               KO
             </button>
-            <button onClick={() => changeLanguage('en')} className="text-sm font-semibold text-gray-500 hover:text-yellow-600 transition-colors" title="Switch to English">
+            <button onClick={() => changeLanguage('en')} className="text-sm font-semibold text-gray-500 hover:text-yellow-600">
               EN
             </button>
           </div>

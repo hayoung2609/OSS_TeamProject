@@ -19,21 +19,11 @@
 
 /* 드롭다운 메뉴 숨기기 */
 #google_translate_element {
-  opacity: 0; /* 완전히 투명하게 만듦 */
-  visibility: hidden; /* 보이지 않게 하고, 공간은 차지할 수 있음 */
-  position: absolute; /* 문서 흐름에서 제외시켜 다른 레이아웃에 영향을 주지 않도록 함 */
-  pointer-events: none; /* 클릭 등 마우스 이벤트를 무시하도록 함 */
-  z-index: -1; /* 다른 요소들 뒤로 숨김 */
+  display: none !important;
 }
-
-/* 번역 후 페이지 상단에 생기는 검은색 툴바 숨기기 */
-.skiptranslate {
-  height: 0 !important;
-  overflow: hidden !important;
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
 }
-
-
-/* 툴바가 차지하던 상단 공백 제거 */
 body {
   top: 0 !important;
 }

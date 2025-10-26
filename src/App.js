@@ -9,6 +9,7 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter>
+
       {/* 배경색은 이제 index.css에서 전역으로 관리합니다 */}
       <div className="flex flex-col min-h-screen">
         <Header />
